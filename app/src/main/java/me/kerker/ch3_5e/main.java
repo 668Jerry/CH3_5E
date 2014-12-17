@@ -11,5 +11,6 @@ public class main extends Activity{
     protected void onCreate(Bundle saveInstanceState)
     {
         super.onCreate(saveInstanceState);
+        setContentView(new myDraw(this));
     }
 }
