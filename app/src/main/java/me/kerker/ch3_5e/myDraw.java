@@ -1,5 +1,6 @@
 package me.kerker.ch3_5e;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -148,6 +149,22 @@ public class myDraw extends View
                 keycode = "[" + keycode + "]";
         }
         invalidate();
+
+        if (iKeyCode == KeyEvent.KEYCODE_BACK) {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(getContext());
+            alertDialog.setTitle("Notice");
+            alertDialog.setMessage("Go!");
+            alertDialog.setPositiveButton("OK", null);
+            alertDialog.show();
+        } else if (iKeyCode == KeyEvent.KEYCODE_MENU) {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(getContext());
+            alertDialog.setTitle("Notice");
+            alertDialog.setMessage("Are you ready?");
+            alertDialog.setPositiveButton("NO", null);
+            alertDialog.setNegativeButton("YES", null);
+            alertDialog.show();
+        }
+
         return true;
     }
 
@@ -156,6 +173,7 @@ public class myDraw extends View
     {
         keycode = "";
         invalidate();
+
         return true;
     }
 }
